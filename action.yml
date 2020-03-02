@@ -1,0 +1,15 @@
+name: 'Replace env vars in file'
+description: 'Replaces environment variables in file using gettext envsubst.'
+author: 'Jan Alfred Richter <falnyr@gmail.com>'
+branding:
+  icon: 'align-left'
+  color: 'purple'
+inputs:
+  filename:
+    description: 'File for the replacement'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.filename }}
