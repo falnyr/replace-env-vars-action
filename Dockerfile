@@ -9,7 +9,9 @@ LABEL "com.github.actions.description"="Replaces __TOKENS__ with environment var
 LABEL "com.github.actions.icon"="align-left"
 LABEL "com.github.actions.color"="purple"
 
-RUN apk update && apk upgrade
+RUN apk update && \
+    apk upgrade && \
+    apk add bash
 
 COPY entrypoint.sh /entrypoint.sh
 
