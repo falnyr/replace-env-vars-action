@@ -7,7 +7,7 @@ Replaces Environment variables in file using gettext [envsubst](https://www.gnu.
 
 ## Example
 ```yaml
-uses: falnyr/replace-environment-vars-action@master
+uses: falnyr/replace-env-vars-action@master
 env:
   FOO: foo
   BAR: bar
