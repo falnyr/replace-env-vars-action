@@ -1,11 +1,11 @@
 #!/usr/bin/env sh
 
 set -e
-FILEPATH=$1
+FILENAME=$1
 
-if [ -z $FILEPATH ]; then
+if [ -z $FILENAME ]; then
   echo 'The path to the file is required'
   exit 1
 fi
 
-envsubst < $FILEPATH > tmp && mv tmp $FILEPATH
+envsubst < $FILENAME > tmp && mv tmp $FILENAME
