@@ -1,5 +1,5 @@
 # Replace env vars in file
-Replaces Environment variables in file using gettext [envsubst](https://www.gnu.org/software/gettext/manual/html_node/envsubst-Invocation.html).
+Replaces `__TOKENS__` with environment variables in file.
 
 ## Usage
 #### Inputs

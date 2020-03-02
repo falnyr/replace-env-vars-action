@@ -1,5 +1,5 @@
 name: 'Replace env vars in file'
-description: 'Replaces environment variables in file using gettext envsubst.'
+description: 'Replaces __TOKENS__ with environment variables in file.'
 author: 'Jan Alfred Richter <falnyr@gmail.com>'
 branding:
   icon: 'align-left'
