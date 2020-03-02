@@ -21,11 +21,11 @@ jobs:
       - name: Run action
         uses: ./
         with:
-          filename: ./test/test.txt
+          filename: ./tests/test.txt
         env:
           NAME: mate
           COLOUR: purple
       - name: Print output
-        run: cat ./test/test.txt
+        run: cat ./tests/test.txt
       - name: Test
-        run: '[[ "$(cat ./test/test.txt)" = "Hi mate. My favourite colour is purple." ]]'
+        run: '[[ "$(cat ./tests/test.txt)" = "Hi mate. My favourite colour is purple." ]]'
