@@ -1,11 +1,5 @@
 name: Tests
-on:
-  push:
-    branches:
-      - '!master'
-  pull_request:
-    branches:
-      - '*'
+on: [push]
 jobs:
   commit-lint:
     name: Lint commit
@@ -17,3 +11,21 @@ jobs:
         with:
           fetch-depth: 0
       - uses: wagoid/commitlint-github-action@v1
+  feature:
+    name: Test
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v1
+          with:
+            fetch-depth: 1
+        - name: Run action
+          uses: ./
+          with:
+            filename: ./test/test.txt
+          env:
+            NAME: mate
+            COLOUR: purple
+        - name: Print output
+          run: cat ./test/test.txt
+        - name: Test
+          run: '[[ "$(cat ./test/test.txt)" = "Hi mate. My favourite colour is purple." ]]'
