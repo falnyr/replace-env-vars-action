@@ -8,8 +8,7 @@ if [ -z $FILENAME ]; then
   exit 1
 fi
 
-for var in $(printenv); do
-  IFS='=' read -r -a array <<< "$var"
-  echo "Setting ${array[0]} to ${array[1]}"
-  sed -i "s|__${array[0]}__|${array[1]}|g" $FILENAME
-done
+while IFS='=' read -r -a var; do
+  echo "Setting ${var[0]} to ${var[1]}"
+  sed -i "s|__${var[0]}__|${var[1]}|g" $FILENAME
+done < <(printenv)
