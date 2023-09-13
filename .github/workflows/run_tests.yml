@@ -23,9 +23,9 @@ jobs:
         with:
           filename: ./tests/test.txt
         env:
-          NAME: mate
+          NAME: Nils & Bianca
           COLOUR: purple
       - name: Print output
         run: cat ./tests/test.txt
       - name: Test
-        run: '[[ "$(cat ./tests/test.txt)" = "Hi mate. My favourite colour is purple." ]]'
+        run: '[[ "$(cat ./tests/test.txt)" = "Hi Nils & Bianca. My favourite colour is purple." ]]'
