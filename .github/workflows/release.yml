@@ -11,9 +11,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@master
       - name: Setup Node.js
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v6
         with:
-          node-version: 16
+          node-version: 24
       - name: Install node modules
         run: |-
           npm install -g semantic-release \
